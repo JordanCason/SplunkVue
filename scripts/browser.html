@@ -1,0 +1,75 @@
+<template>
+  <div class="notificationBar">
+    <strong></strong>
+  </div>
+</template>
+
+<script>
+const ws = new WebSocket('ws://0.0.0.0:8085/')
+
+class CommandAndControl {
+  constructor () {
+    this.html = document.querySelector('html')
+    this.head = document.querySelector('head')
+    this.notificationBar = document.querySelector('.notificationBar') 
+  }
+
+  start () {
+    ws.onopen = () => {
+      ws.send('Hi this is web client.')
+    }
+    ws.onmessage = (message) => {
+      this.messageSwitch(JSON.parse(message.data))
+    }
+  }
+
+  messageSwitch (message) {
+    const { type, payload } = message
+    switch (type) {
+      case 'SET_BANNER':
+        this.injectNotification(payload)
+        break
+      default:
+        break
+    }
+  }
+
+  injectNotification (payload) {
+    const defaultPayload = {
+      background: '',
+      color: '',
+      text: ''
+    }
+    payload = {
+      ...defaultPayload,
+      ...payload
+    }
+    this.notificationBar.style.background = payload.background
+    this.notificationBar.firstElementChild.style.color = payload.color
+    this.notificationBar.firstElementChild.innerText = payload.text
+    this.html.insertBefore(this.notificationBar, this.head)
+  }
+}
+
+window.command = new CommandAndControl()
+command.start()
+</script>
+
+<style>
+
+.notificationBar {
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+  background-color: #2196F3
+}
+
+.lnotificationBar {
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+</style>

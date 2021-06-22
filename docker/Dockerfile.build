@@ -1,0 +1,12 @@
+FROM splunk/splunk:7.3
+
+ENV SPLUNK_START_ARGS --accept-license
+ENV SPLUNK_USER splunk
+ENV SPLUNK_PASSWORD changeme2
+
+COPY .ui_login /opt/splunk/etc/.ui_login
+COPY web.conf /opt/splunk/etc/system/local/web.conf
+COPY props.conf /opt/splunk/etc/system/local/props.conf
+COPY inputs.conf /opt/splunk/etc/system/local/inputs.conf
+COPY fields.conf /opt/splunk/etc/system/local/fields.conf
+COPY transforms.conf /opt/splunk/etc/system/local/transforms.conf

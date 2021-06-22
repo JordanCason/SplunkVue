@@ -1,0 +1,43 @@
+.DS_Store
+node_modules
+/dist*
+/build*
+package-lock.json
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+scripts/output.txt
+
+# PYC Files
+*.pyc
+
+package.zip
+package-data.zip
+
+# Docs JSDoc and Sphinx output directories and files
+/docs/out/*
+/docs/build/*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# data
+/data/FE/*
+/data/IPP/*
+/data/lookups/*
+
+# Ignore Exceptions
+!/data/lookups/FaudeState.csv
+!/data/lookups/TipperPOC.csv
+!/data/lookups/VIPLookup.csv

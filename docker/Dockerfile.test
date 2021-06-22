@@ -1,0 +1,9 @@
+ARG NODE_VERSION=10
+FROM node:${NODE_VERSION}
+
+ENV NODE_ENV dev
+
+COPY package.test.json package.json
+
+RUN npm update && \
+    npm install jest --global

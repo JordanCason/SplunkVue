@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ExampleVue</title>
+</head>
+<body style="height: 100%; overflow: hidden;">
+
+
+<div id="app" style="height: 100%"></div>
+<script src="{{SPLUNKWEB_URL_PREFIX}}/config?autoload=1" crossorigin="use-credentials"></script>
+<script src="{{SPLUNKWEB_URL_PREFIX}}/static/js/i18n.js"></script>
+<script src="{{SPLUNKWEB_URL_PREFIX}}/i18ncatalog?autoload=1"></script>
+<script src="{{SPLUNKWEB_URL_PREFIX}}/static/build/simplexml/index.js"></script>
+<script>
+  require([
+    "splunkjs/mvc",
+    "splunkjs/mvc/utils",
+    "splunkjs/mvc/tokenutils",
+    "underscore",
+    "jquery",
+    "splunkjs/mvc/simplexml",
+    "splunkjs/mvc/layoutview",
+    "splunkjs/mvc/simplexml/dashboardview",
+    "splunkjs/mvc/simplexml/dashboard/panelref",
+    "splunkjs/mvc/simplexml/element/chart",
+    "splunkjs/mvc/simplexml/element/event",
+    "splunkjs/mvc/simplexml/element/html",
+    "splunkjs/mvc/simplexml/element/list",
+    "splunkjs/mvc/simplexml/element/map",
+    "splunkjs/mvc/simplexml/element/single",
+    "splunkjs/mvc/simplexml/element/table",
+    "splunkjs/mvc/simplexml/element/visualization",
+    "splunkjs/mvc/simpleform/formutils",
+    "splunkjs/mvc/simplexml/eventhandler",
+    "splunkjs/mvc/simplexml/searcheventhandler",
+    "splunkjs/mvc/simpleform/input/dropdown",
+    "splunkjs/mvc/simpleform/input/radiogroup",
+    "splunkjs/mvc/simpleform/input/linklist",
+    "splunkjs/mvc/simpleform/input/multiselect",
+    "splunkjs/mvc/simpleform/input/checkboxgroup",
+    "splunkjs/mvc/simpleform/input/text",
+    "splunkjs/mvc/simpleform/input/timerange",
+    "splunkjs/mvc/simpleform/input/submit",
+    "splunkjs/mvc/searchmanager",
+    "splunkjs/mvc/savedsearchmanager",
+    "splunkjs/mvc/postprocessmanager",
+    "splunkjs/mvc/simplexml/urltokenmodel"
+    ],
+    function(
+      mvc,
+      utils,
+      TokenUtils,
+      _,
+      $,
+      DashboardController,
+      LayoutView,
+      Dashboard,
+      PanelRef,
+      ChartElement,
+      EventElement,
+      HtmlElement,
+      ListElement,
+      MapElement,
+      SingleElement,
+      TableElement,
+      VisualizationElement,
+      FormUtils,
+      EventHandler,
+      SearchEventHandler,
+      DropdownInput,
+      RadioGroupInput,
+      LinkListInput,
+      MultiSelectInput,
+      CheckboxGroupInput,
+      TextInput,
+      TimeRangeInput,
+      SubmitButton,
+      SearchManager,
+      SavedSearchManager,
+      PostProcessManager,
+      UrlTokenModel
+      ) {
+        window.splunkStack = {
+          ...window.splunkStack,
+          mvc,
+          utils,
+          TokenUtils,
+          _,
+          $,
+          DashboardController,
+          LayoutView,
+          Dashboard,
+          PanelRef,
+          ChartElement,
+          EventElement,
+          HtmlElement,
+          ListElement,
+          MapElement,
+          SingleElement,
+          TableElement,
+          VisualizationElement,
+          FormUtils,
+          EventHandler,
+          SearchEventHandler,
+          DropdownInput,
+          RadioGroupInput,
+          LinkListInput,
+          MultiSelectInput,
+          CheckboxGroupInput,
+          TextInput,
+          TimeRangeInput,
+          SubmitButton,
+          SearchManager,
+          SavedSearchManager,
+          PostProcessManager,
+          UrlTokenModel,
+          origin: window.location.origin,
+          urlPrefix: "{{SPLUNKWEB_URL_PREFIX}}/static/",
+          ready: true
+        }
+      })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "appName": "exampleApp",
+  "outputDirectory": "build",
+  "srcCsvDir": "/data/lookups/",
+  "dstCsvDir": "/build/exampleApp/lookups/",
+  "watcher": {
+    "lockTime": 1000,
+    "fileTypes": [
+      ".js",
+      ".conf",
+      ".vue",
+      ".html",
+      ".py",
+      ".xml"
+    ],
+    "directorys": {
+      "webpackBuild": [
+        "/src",
+        "/public/exampleApp/bin",
+        "/public/exampleApp/default",
+        "/public/exampleApp/local/data/ui/views"
+      ],
+      "uiReload": [
+        "/build/exampleApp/appserver/static/js",
+        "/build/exampleApp/appserver/static/css"
+      ],
+      "serviceReload": [
+        "/build/exampleApp/default"
+      ],
+      "containerReload": [
+        "/docker"
+      ]
+    }
+  },
+  "docker": {
+    "imageName": "splunkcustom",
+    "dockerfile": "Dockerfile.build",
+    "dockerpath": "/docker"
+  },
+  "dashboards": {
+    "exampleVue": {
+      "type": "html",
+      "entry": {
+        "name": "exampleVue",
+        "path": ["./src/entry/exampleVue/exampleVue.js"]
+      },
+      "plugin": {
+        "template": "/src/templates/exampleVue.html",
+        "filename": "/build/exampleApp/default/data/ui/html/exampleVue.html",
+        "chunks": [
+          "exampleVue",
+          "chunk-vendors",
+          "chunk-common"
+        ],
+        "xhtml": true,
+        "minify": true,
+        "inject": "body"
+      }
+    },
+    "exampleJS": {
+      "type": "xml",
+      "entry": {
+        "name": "exampleJS",
+        "path": ["./src/entry/exampleJS/exampleJS.js"]
+      },
+      "xmlEntry": {
+        "name": "exampleJS",
+        "path": "/src/templates/exampleJS.xml"
+      }
+    }
+  }
+}

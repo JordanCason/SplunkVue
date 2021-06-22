@@ -1,0 +1,9 @@
+{
+  "pluginsFile": "tests/e2e/plugins/index.js",
+  "baseUrl": "http://0.0.0.0:8000",
+  "video": false,
+  "testFiles": [
+    "splunk.spec.js",
+    "exampleApp.spec.js"
+  ]
+}

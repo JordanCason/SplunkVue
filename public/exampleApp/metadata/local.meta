@@ -1,0 +1,21 @@
+[app/ui]
+version = 7.3.0
+modtime = 1565085270.401651000
+
+[app/launcher]
+version = 7.3.0
+modtime = 1565085270.402731000
+
+[views/test_me]
+access = read : [ * ], write : [ * ]
+export = system
+owner = admin
+version = 7.3.1
+modtime = 1567111230.137360000
+
+[html/test_me]
+access = read : [ * ], write : [ * ]
+export = system
+owner = admin
+version = 7.3.1
+modtime = 1567111230.135595000
